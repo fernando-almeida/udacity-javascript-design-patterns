@@ -1,0 +1,36 @@
+*,
+*:before,
+*:after {box-sizing: border-box;}
+
+#view-admin {
+	clear: left;
+	width: 225px;
+}
+
+#view-admin label { 
+	width: 70px;
+	display: inline-block;
+	text-align: right;
+}
+
+
+#view-admin form input[type="button"] { 
+	float: right;
+}
+
+#cat-list { 
+	border: 1px solid black; 
+	float: right; 
+	list-style-type: none;
+}
+
+#cat-detail { 
+	border: 1px solid black; 
+	float: left;
+}
+
+#cat-img {
+	width: 150px; 
+	height: 150px;
+}
+

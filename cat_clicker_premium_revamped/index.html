@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<meta charset="ut8"> </meta>
+<title>Cat Clicker Premium (Revamped)</title>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" > </script>
+<link href="css/cat.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<ul id="cat-list"> </ul>
+	
+	<div id="cat-detail">
+		<h1 id="cat-name"> </h1>
+		<img id="cat-img"  />
+		<div> Number of clicks: <span id="cat-clicks"> </span>  </div>
+	</div>
+	
+	
+	<div id="view-admin">
+		<input id="admin-button" type="button" value="Admin" />
+		<form id="form-admin">
+			<div>
+				<label for="form-cat-name">Name</label>
+				<input id="form-cat-name" type="text" />
+			</div>
+			<div>
+				<label for="form-cat-img-url">ImgURL</label>
+				<input id="form-cat-img-url" type="text" />
+			</div>
+			<div>
+				<label for="form-cat-nclicks">#clicks</label>
+				<input id="form-cat-nclicks" type="text" />
+			</div>
+			<div>
+				<input id="form-save-button" type="button" value="Save" />
+				<input id="form-cancel-button" type="button" value="Cancel" />
+			</div>
+		</form>
+	</div>
+	
+</body>
+
+</html>
+
+<script src="js/app.js" type="text/javascript" > </script>

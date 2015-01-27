@@ -1,0 +1,70 @@
+<html>
+
+<head>
+
+<title>Dual cat clicker</title>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"> </script>
+
+</head>
+
+<body>
+	<div class="cat">
+		<h1 id="cat1-name"> </h1>
+		<img id="cat1-img" src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" />
+		<div> Number of clicks: <span id="cat1-clicks" />  </div>
+	</div>
+	
+	<div class="cat">
+		<h1 id="cat2-name"> </h1>
+		<img id="cat2-img" src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" />
+		<div> Number of clicks: <span id="cat2-clicks" />  </div>
+	</div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+var cat1_name = "Cat1";
+var cat2_name = "Cat2";
+var cat1_clicks = 0;
+var cat2_clicks = 0;
+
+function set_cat1_name( name )
+{
+	$('#cat1-name').text( name );
+}
+
+function set_cat2_name( name )
+{
+	$('#cat2-name').text( name );
+}
+
+function set_cat1_clicks( nclicks )
+{ 
+	$('#cat1-clicks').html( nclicks );
+}
+
+function set_cat2_clicks( nclicks )
+{
+	$('#cat2-clicks').html( nclicks );
+}
+
+
+$('#cat1-img').click(function(e) {
+	cat1_clicks++;
+	set_cat1_clicks( cat1_clicks );
+});
+
+$('#cat2-img').click(function(e) {
+	cat2_clicks++;
+	set_cat2_clicks( cat2_clicks );
+});
+
+set_cat1_name( cat1_name );
+set_cat2_name( cat2_name );
+
+set_cat1_clicks( cat1_clicks );
+set_cat2_clicks( cat2_clicks );
+
+</script>

@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<title>Cat clicker</title>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"> </script>
+
+</head>
+
+<body>
+	<div> Number of clicks: <span id="num-clicks"> </span>  </div>
+	<img id="cat-img" src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" />
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+function set_numclicks( nclicks )
+{ 
+	// alert(nclicks);
+	// var el = $('#num-clicks');
+	$('#num-clicks').html( nclicks );
+}
+
+var num_clicks = 0;
+
+$('#cat-img').click(function(e) {
+  //the element has been clicked... do stuff here
+	num_clicks++;
+	set_numclicks( num_clicks );
+});
+
+set_numclicks( num_clicks );
+
+</script>

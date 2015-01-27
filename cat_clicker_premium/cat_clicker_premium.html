@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+<title>Cat clicker premium</title>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"> </script>
+
+<style>
+#cat-list { border: 1px solid black; float: left; list-style-type: none; }
+.cat-display { border: 1px solid black; float: left; }
+#cat-img { width: 150px; height: 150px; }
+</style>
+
+</head>
+
+<body>
+
+	<ul id="cat-list">
+		
+	</ul>
+	<div class="cat-display">
+		<h1 id="cat-name"> </h1>
+		<img id="cat-img"  />
+		<div> Number of clicks: <span id="cat-clicks"> </span>  </div>
+	</div>
+	
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+var cat1 = { name: "cat1", img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSr78hc5SRq_gx99Xw1cipmSWhP5YpDf08y-XW07SaoDEI2xjkFJvjnaw", nclicks: 0 };
+var cat2 = { name: "cat2", img: "http://scienceblogs.com/gregladen/files/2012/12/Beautifull-cat-cats-14749885-1600-1200.jpg", nclicks: 0 };
+var cat3 = { name: "cat3", img: "http://www.cromo.com.uy/wp-content/uploads/2013/11/grumpy-cat.jpg", nclicks: 0 };
+var cat4 = { name: "cat4", img: "http://case.ntu.edu.tw/blog/wp-content/uploads/2014/12/Tortoiseshell_she-cat.jpg", nclicks: 0 };
+var cat5 = { name: "cat5", img: "http://www.globalpost.com/sites/default/files/imagecache/gp3_slideshow_large/photos/2013-October/germany_cat.jpg", nclicks: 0 };
+var cats = [ cat1, cat2, cat3, cat4, cat5 ];
+
+var cat_list = $('#cat-list');
+var curCat = cat1;
+
+function set_cat_clicks( nclicks )
+{
+	$('#cat-clicks').text( nclicks );
+}
+
+function display_cat( cat )
+{
+	$('#cat-name').text( cat.name );
+	$('#cat-img').attr( "src", cat.img );
+	set_cat_clicks( cat.nclicks );
+}
+
+$('#cat-img').click(function(e) {
+	curCat.nclicks++;
+	set_cat_clicks( curCat.nclicks );
+});
+
+for ( i = 0; i < cats.length; i++ )
+{
+	cat_listitem = $('<li>' + cats[i].name + "</li>");
+	cat_list.append( cat_listitem );
+	
+	cat_listitem.click( (function( cat ) 
+		{
+			return function() 
+			{ curCat = cat; display_cat( cat ); };
+		
+		} )( cats[i] ));
+}
+
+display_cat( curCat );
+
+</script>
